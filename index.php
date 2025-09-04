@@ -26,14 +26,14 @@ if (isset($update)) {
         @$chat_id = $message->chat->id;
         @$caption = $message->caption;
         //file id
-        @$sticker_id = $message->sticker->file_id;
-        @$photo_id = $message->photo[count($message->photo) - 1]->file_id;
-        @$video_id = $message->video->file_id;
-        @$voice_id = $message->voice->file_id;
-        @$file_id = $message->document->file_id;
-        @$music_id = $message->audio->file_id;
-        @$animation_id = $message->animation->file_id;
-        @$video_note_id = $message->video_note->file_id;
+        @$sticker_id = isset($message->sticker) ? $message->sticker->file_id : null;
+        @$photo_id = isset($message->photo) ? $message->photo[count($message->photo) - 1]->file_id : null;
+        @$video_id = isset($message->video) ? $message->video->file_id : null;
+        @$voice_id = isset($message->voice) ? $message->voice->file_id : null;
+        @$file_id  = isset($message->document) ? $message->document->file_id : null;
+        @$music_id = isset($message->audio) ? $message->audio->file_id : null;
+        @$animation_id = isset($message->animation) ? $message->animation->file_id : null;
+        @$video_note_id = isset($message->video_note) ? $message->video_note->file_id : null;    
     }
 
     // business updates
