@@ -1,0 +1,423 @@
+/**
+ * Frontend CSS for Design Orders Plugin
+ */
+
+/* RTL Support */
+body.rtl .design-orders-section,
+body.rtl .design-order-popup {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Design Orders Section in Mini Cart */
+.design-orders-section {
+    padding: 15px 0;
+    border-top: 1px solid #e1e1e1;
+    margin-top: 15px;
+}
+
+.design-orders-section h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.design-order-item {
+    margin-bottom: 8px;
+    padding: 5px 0;
+}
+
+.design-order-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0;
+}
+
+.design-order-checkbox {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+body.rtl .design-order-checkbox {
+    margin-right: 8px;
+    margin-left: 0;
+}
+
+/* Popup Styles */
+.design-order-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+}
+
+.popup-content {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.popup-header {
+    padding: 20px;
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.popup-close:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.popup-body {
+    padding: 20px;
+}
+
+.popup-footer {
+    padding: 20px;
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+}
+
+.form-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.required {
+    color: #d63638;
+}
+
+/* Selected Product Display */
+.selected-product {
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Price Info */
+.price-info {
+    background: #e8f4f8;
+    border: 1px solid #b8dce8;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.price-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.price-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0073aa;
+}
+
+/* Terms Notice */
+.terms-notice {
+    margin-top: 20px;
+}
+
+.notice-box {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.notice-box p {
+    margin: 0 0 10px 0;
+    color: #856404;
+}
+
+.notice-box ul {
+    margin: 0;
+    padding-right: 20px;
+    color: #856404;
+}
+
+body.rtl .notice-box ul {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.notice-box li {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    min-height: 40px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: #0073aa;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #005177;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #545b62;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-loading {
+    display: none !important;
+}
+
+.btn.loading .btn-text {
+    display: none;
+}
+
+.btn.loading .btn-loading {
+    display: flex !important;
+}
+
+/* Success Popup */
+.success-popup {
+    text-align: center;
+}
+
+.success-icon {
+    margin: 20px 0;
+}
+
+.success-message p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.success-message p:first-child {
+    font-size: 16px;
+    color: #00a32a;
+}
+
+/* Spinner */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff33;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mini Cart Button Override */
+.woocommerce-mini-cart__buttons .button.checkout {
+    background: #0073aa;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.woocommerce-mini-cart__buttons .button.checkout:hover {
+    background: #005177;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        margin: 10px;
+        max-height: 95vh;
+    }
+    
+    .popup-header,
+    .popup-body,
+    .popup-footer {
+        padding: 15px;
+    }
+    
+    .popup-footer {
+        flex-direction: column-reverse;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .price-display {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    body.rtl .price-display {
+        align-items: flex-end;
+    }
+}
+
+/* Woodmart Theme Compatibility */
+.woodmart-theme .design-orders-section {
+    font-family: inherit;
+}
+
+.woodmart-theme .design-order-popup {
+    font-family: inherit;
+}
+
+.woodmart-theme .btn-primary {
+    background: var(--primary-color, #0073aa);
+}
+
+/* Error states */
+.form-control.error {
+    border-color: #d63638;
+    box-shadow: 0 0 0 2px rgba(214, 54, 56, 0.1);
+}
+
+.error-message {
+    color: #d63638;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Animation for form validation */
+.form-group.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
