@@ -1,0 +1,264 @@
+/**
+ * Admin CSS for Design Orders Plugin
+ */
+
+/* RTL Support */
+body.rtl .design-orders-admin {
+    direction: rtL;
+    text-align: right;
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 80px;
+}
+
+/* Orders table styling */
+.wp-list-table .column-id {
+    width: 80px;
+}
+
+.wp-list-table .column-product {
+    width: 200px;
+}
+
+.wp-list-table .column-customer {
+    width: 180px;
+}
+
+.wp-list-table .column-details {
+    width: 250px;
+}
+
+.wp-list-table .column-status {
+    width: 120px;
+}
+
+.wp-list-table .column-date {
+    width: 150px;
+}
+
+.wp-list-table .column-actions {
+    width: 150px;
+}
+
+/* Design details */
+.design-details {
+    max-width: 200px;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.show-full-details {
+    color: #0073aa;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.show-full-details:hover {
+    text-decoration: underline;
+}
+
+/* Status select */
+.status-select {
+    width: 130px;
+    margin-bottom: 5px;
+}
+
+/* Modal styles */
+.design-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.design-details-modal .modal-content {
+    background: white;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.design-details-modal .modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.design-details-modal .modal-header h3 {
+    margin: 0;
+}
+
+.design-details-modal .modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.design-details-modal .modal-body {
+    padding: 20px;
+}
+
+.design-details-modal .modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Settings page */
+.form-table th {
+    width: 200px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* Loading states */
+.updating {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.status-select.loading {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDNWNyIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTAgMTNWMTciIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHA+PC9wPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+/* Success/Error messages */
+.design-orders-message {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.design-orders-message.success {
+    background: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+.design-orders-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .wp-list-table .column-details,
+    .wp-list-table .column-date {
+        display: none;
+    }
+    
+    .design-details-modal .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .status-select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animation for loading */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #666;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 5px;
+}
+
+/* Subsubsub navigation */
+.subsubsub {
+    direction: rtl;
+}
+
+.subsubsub li {
+    display: inline-block;
+}
+
+.subsubsub a.current {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Table row hover effects */
+.wp-list-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Action buttons */
+.delete-order {
+    background: #d63638;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.delete-order:hover {
+    background: #a00;
+}
+
+/* Stats cards in settings */
+.card table.widefat {
+    border: none;
+}
+
+.card table.widefat td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.card table.widefat tr:last-child td {
+    border-bottom: none;
+}
